@@ -1,10 +1,10 @@
-package com.springboot.microservices;
+package com.springboot.departmentservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MicroservicesApplicationTests {
+class DepartmentServiceApplicationTests {
 
 	@Test
 	void contextLoads() {
