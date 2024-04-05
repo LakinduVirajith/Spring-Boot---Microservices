@@ -1,9 +1,9 @@
 server:
-  port: 8767
+  port: 8761
 
 spring:
   application:
-    name: microservices
+    name: service-registry
 
 eureka:
   instance:
