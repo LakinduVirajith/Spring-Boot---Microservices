@@ -32,6 +32,13 @@
 			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
 
+		<!--Lombok-->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+
 		<!--Eureka Discovery Client-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
