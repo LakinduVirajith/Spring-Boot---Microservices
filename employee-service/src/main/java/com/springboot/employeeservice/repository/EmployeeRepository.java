@@ -1,35 +1,17 @@
 package com.springboot.employeeservice.repository;
 
-import com.springboot.employeeservice.model.Employee;
+import com.springboot.employeeservice.collection.Employee;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class EmployeeRepository {
+public interface EmployeeRepository extends MongoRepository<Employee, Long> {
 
-    private List<Employee> employees = new ArrayList<>();
+    List<Employee> findAllByDepartmentId(Long departmentId);
 
-    public Employee add(Employee employee){
-        employees.add(employee);
-        return employee;
-    }
-
-    public Employee findById(Long id){
-        return employees.stream()
-                .filter(employee -> employee.id().equals(id))
-                .findFirst()
-                .orElseThrow();
-    }
-
-    public List<Employee> findAll(){
-        return employees;
-    }
-
-    public List<Employee> findByDepartment(Long departmentId){
-        return employees.stream()
-                .filter(employee -> employee.departmentId().equals(departmentId))
-                .toList();
-    }
+    void deleteAllByDepartmentId(Long departmentId);
 }

@@ -1,0 +1,105 @@
+-----	Department	-----
+
+{
+"id": 1,
+"name": "Finance Department"
+}
+{
+"id": 2,
+"name": "Human Resources Department"
+}
+{
+"id": 3,
+"name": "Marketing Department"
+}
+{
+"id": 4,
+"name": "Research and Development Department"
+}
+{
+"id": 5,
+"name": "Sales Department"
+}
+
+
+-----	Employee	-----
+
+{
+"id": 1,
+"departmentId": 1,
+"name": "John Smith",
+"age": 35,
+"position": "Senior Accountant"
+}
+
+{
+"id": 2,
+"departmentId": 1,
+"name": "Emily Johnson",
+"age": 28,
+"position": "Financial Analyst"
+}
+
+{
+"id": 3,
+"departmentId": 2,
+"name": "Michael Davis",
+"age": 42,
+"position": "HR Manager"
+}
+
+{
+"id": 4,
+"departmentId": 2,
+"name": "Sarah Wilson",
+"age": 30,
+"position": "Recruitment Specialist"
+}
+
+{
+"id": 5,
+"departmentId": 3,
+"name": "David Thompson",
+"age": 38,
+"position": "Marketing Director"
+}
+
+{
+"id": 6,
+"departmentId": 3,
+"name": "Jessica Brown",
+"age": 26,
+"position": "Social Media Manager"
+}
+
+{
+"id": 7,
+"departmentId": 4,
+"name": "Christopher Lee",
+"age": 45,
+"position": "Research Scientist"
+}
+
+{
+"id": 8,
+"departmentId": 4,
+"name": "Michelle Rodriguez",
+"age": 31,
+"position": "Data Analyst"
+}
+
+{
+"id": 9,
+"departmentId": 5,
+"name": "Daniel Martinez",
+"age": 39,
+"position": "Operations Manager"
+}
+
+{
+"id": 10,
+"departmentId": 5,
+"name": "Rachel Clark",
+"age": 29,
+"position": "Logistics Coordinator"
+}
