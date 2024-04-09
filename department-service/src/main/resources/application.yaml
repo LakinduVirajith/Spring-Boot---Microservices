@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: department-service
+  profiles:
+    active: prod
+  config:
+    import: "optional:configserver:http://localhost:8080"
