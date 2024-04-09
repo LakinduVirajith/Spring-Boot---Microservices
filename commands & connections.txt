@@ -1,0 +1,19 @@
+-----	zipkin	-----
+
+docker run -d -p 9411:9411 --name zipkin-container openzipkin/zipkin-slim
+
+----	mongodb compass connection	-----
+
+mongodb+srv://<username>:<password>@cluster.lpmrzwx.mongodb.net/
+
+username: lakindu
+password: ctse
+
+username: vihanga
+password: ctse
+
+username: sankalpa
+password: ctse
+
+username: vimukthi
+password: ctse
