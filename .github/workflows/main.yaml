@@ -3,7 +3,7 @@ name: Build and Deploy spring microservices application CTSE assignment
 on: 
   push:
     branches:
-      - ci-cd
+      - test/ci-cd
 
 jobs:
   build-deploy:
