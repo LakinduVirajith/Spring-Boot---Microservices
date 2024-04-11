@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.springboot</groupId>
 	<artifactId>department-services</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>department-services</name>
 	<description>Demo Project for Spring Boot Microservices</description>
 	<properties>
@@ -21,22 +21,26 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+			<version>3.2.4</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-config</artifactId>
+			<version>4.1.1</version>
 		</dependency>
 
 		<!--Spring Data MongoDB-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+			<version>3.2.4</version>
 		</dependency>
 
 		<!--Lombok-->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
+			<version>1.18.30</version>
 			<optional>true</optional>
 		</dependency>
 
@@ -44,16 +48,19 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
+			<version>3.2.4</version>
 		</dependency>
 
 		<!--Zipkin-->
 		<dependency>
 			<groupId>io.micrometer</groupId>
 			<artifactId>micrometer-tracing-bridge-brave</artifactId>
+			<version>1.2.4</version>
 		</dependency>
 		<dependency>
 			<groupId>io.zipkin.reporter2</groupId>
 			<artifactId>zipkin-reporter-brave</artifactId>
+			<version>2.16.3</version>
 		</dependency>
 
 		<!--Eureka Discovery Client-->
@@ -66,6 +73,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-webflux</artifactId>
+			<version>3.2.4</version>
 		</dependency>
 
 		<!-- Springdoc OpenAPI (Swagger) -->
@@ -78,6 +86,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
+			<version>3.2.4</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
