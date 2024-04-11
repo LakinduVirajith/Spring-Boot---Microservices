@@ -8,7 +8,7 @@ WORKDIR /app
 COPY target/service-registry-1.0.0.jar /app/service-registry.jar
 
 # Expose the port that the Spring Boot application listens on
-EXPOSE 8060
+EXPOSE 8070
 
 # Define the command to run the Spring Boot application
 CMD ["java", "-jar", "service-registry.jar"]
