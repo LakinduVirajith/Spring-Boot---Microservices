@@ -2,12 +2,7 @@ name: Build and Deploy Spring Microservices Application for CTSE Assignment
 
 on: 
   push:
-    branches:
-      - main
-      - test/ci-cd
-  pull_request:
-    branches:
-      - main
+    branches: [ main, test/ci-cd ]
 
 jobs:
   cd-pipeline:
