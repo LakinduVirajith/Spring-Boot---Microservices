@@ -17,3 +17,21 @@ password: ctse
 
 username: vimukthi
 password: ctse
+
+-----	docker commands	-----
+
+docker push lakinduvirajith/ctse-service-registry
+docker push lakinduvirajith/ctse-config-server
+docker push lakinduvirajith/ctse-api-gateway
+docker push lakinduvirajith/ctse-department-service
+docker push lakinduvirajith/ctse-employee-service
+
+docker network create ctse-microservice-app
+
+docker run -d -p 8761:8761 --name service-registry --net ctse-microservice-app lakinduvirajith/ctse-service-registry
+docker run -d -p 8070:8070 --name config-server --net ctse-microservice-app lakinduvirajith/ctse-config-server
+docker run -d -p 8080:8080 --name api-gateway --net ctse-microservice-app lakinduvirajith/ctse-api-gateway
+docker run -d -p 8081:8081 --name department-service --net ctse-microservice-app lakinduvirajith/ctse-department-service
+docker run -d -p 8082:8082 --name employee-service --net ctse-microservice-app lakinduvirajith/ctse-employee-service
+
+
