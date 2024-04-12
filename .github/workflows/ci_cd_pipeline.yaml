@@ -12,8 +12,8 @@ jobs:
     steps:
       - name: Establish Environment Variables
         run: |
-          echo "MONGODB_USERNAME=${{ secrets.MONGODB_USERNAME }}" >> $PRODUCTION
-          echo "MONGODB_PASSWORD=${{ secrets.MONGODB_PASSWORD }}" >> $PRODUCTION
+          echo "MONGODB_USERNAME=${{ secrets.MONGODB_USERNAME }}" > ${{ github.workspace }}/production
+          echo "MONGODB_PASSWORD=${{ secrets.MONGODB_PASSWORD }}" >> ${{ github.workspace }}/production
   
   build-deploy:
     name: Build and Deploy Spring Microservices Application
