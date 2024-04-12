@@ -38,6 +38,4 @@ jobs:
           run: mvn -B test --file ${{ matrix.service }}/pom.xml
 
         - name: Build the Application for ${{ matrix.service }}
-          run: |
-            mvn clean
-            mvn -B package --file ${{ matrix.service }}/pom.xml
+          run: mvn -B package --file ${{ matrix.service }}/pom.xml
