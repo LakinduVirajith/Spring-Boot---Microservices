@@ -1,7 +1,7 @@
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://ctse-assignment/service-registry:8761/eureka/
+      defaultZone: http://service-registry:8761/eureka/
 
 management:
   tracing:
