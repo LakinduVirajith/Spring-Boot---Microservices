@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.springboot</groupId>
 	<artifactId>service-registry</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>service-registry</name>
 	<description>Demo Project for Spring Boot Microservices</description>
 	<properties>
@@ -21,6 +21,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+			<version>3.2.4</version>
 		</dependency>
 
 		<!--Eureka Server-->
@@ -32,6 +33,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
+			<version>3.2.4</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>

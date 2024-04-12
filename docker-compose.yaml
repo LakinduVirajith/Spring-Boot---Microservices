@@ -1,0 +1,54 @@
+services:
+  service-registry:
+    container_name: service-registry
+    image: lakinduvirajith/ctse-service-registry
+    ports: 
+      - "8761:8761"
+    networks: 
+      - ctse-docker-network
+  
+  config-server:
+    container_name: config-server
+    image: lakinduvirajith/ctse-config-server
+    ports: 
+      - "8070:8070"
+    networks: 
+      - ctse-docker-network
+
+  api-gateway:
+    container_name: api-gateway
+    image: lakinduvirajith/ctse-api-gateway
+    ports: 
+      - "8080:8080"
+    networks: 
+      - ctse-docker-network
+    depends_on:
+      - service-registry
+      - config-server
+
+  department-service:
+    container_name: department-service
+    image: lakinduvirajith/ctse-department-service
+    ports: 
+      - "8081:8081"
+    networks: 
+      - ctse-docker-network
+    depends_on:
+      - service-registry
+      - config-server
+
+  employee-service:
+    container_name: employee-service
+    image: lakinduvirajith/ctse-employee-service
+    ports: 
+      - "8082:8082"
+    networks: 
+      - ctse-docker-network
+    depends_on:
+      - service-registry
+      - config-server
+
+networks:
+  ctse-docker-network:
+    name: ctse-docker-network
+    driver: bridge
