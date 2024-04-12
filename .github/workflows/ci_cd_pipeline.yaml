@@ -18,8 +18,8 @@ jobs:
 
       - name: Set Environment Variables
         run: |
-          sed -i "s/\${MONGODB_USERNAME}/$MONGODB_USERNAME/g" config-server/src/main/resources/config/department-service.yaml
-          sed -i "s/\${MONGODB_PASSWORD}/$MONGODB_PASSWORD/g" config-server/src/main/resources/config/employee-service.yaml
+          sed -i "s/\${MONGODB_USERNAME}/$MONGODB_USERNAME/g" ../config-server/src/main/resources/config/department-service.yaml
+          sed -i "s/\${MONGODB_PASSWORD}/$MONGODB_PASSWORD/g" ../config-server/src/main/resources/config/employee-service.yaml
   
   build-deploy:
     name: Build and Deploy Spring Microservices Application
