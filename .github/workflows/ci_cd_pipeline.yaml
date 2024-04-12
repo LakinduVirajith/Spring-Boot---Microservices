@@ -16,6 +16,11 @@ jobs:
       - name: Navigate to Config Directory
         run: cd ../config-server/src/main/resources/config/
 
+      - name: Debug Directory Structure
+        run: |
+          pwd
+          ls -lR
+          
       - name: Replace Environment Variables in Configuration File
         run: |
           sed -i "s/\${MONGODB_USERNAME}/$MONGODB_USERNAME/g" department-service.yaml
