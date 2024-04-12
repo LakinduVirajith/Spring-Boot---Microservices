@@ -3,28 +3,14 @@ name: Build and Deploy Spring Microservices Application for CTSE Assignment
 on: 
   push:
     branches:
+      - main
       - test/ci-cd
 
 jobs:
-  setup-environment:
-    name: Setup Environment
-    runs-on: ubuntu-latest
-    environment: production
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-        
-      - name: Set up Environment Variables
-        env:
-          MONGODB_USERNAME: ${{ vars.MONGODB_USERNAME }}
-          MONGODB_PASSWORD: ${{ vars.MONGODB_PASSWORD }}
-        working-directory: ./config-server
-        run: bash setup_env.sh
-  
-  build-deploy:
+  ci-cd-pipeline:
     name: Build and Deploy Spring Microservices Application
     runs-on: ubuntu-latest
-    needs: setup-environment
+    environment: production
     strategy:
       matrix:
         service:
@@ -43,6 +29,13 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: 17
+
+      - name: Set up Environment Variables
+        env:
+          MONGODB_USERNAME: ${{ vars.MONGODB_USERNAME }}
+          MONGODB_PASSWORD: ${{ vars.MONGODB_PASSWORD }}
+        working-directory: ./config-server
+        run: bash setup_env.sh
 
       - name: Run Unit Tests for ${{ matrix.service }}
         run: mvn -B test --file ${{ matrix.service }}/pom.xml
