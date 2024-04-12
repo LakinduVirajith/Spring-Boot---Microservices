@@ -13,18 +13,10 @@ jobs:
       MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
       MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
     steps:
-      - name: Debug Directory Structure
-        run: |
-          pwd
-          ls -lR
-
-      - name: Navigate to Config Directory
-        run: cd config-server/src/main/resources/config/
-
       - name: Replace Environment Variables in Configuration File
         run: |
-          sed -i "s/\${MONGODB_USERNAME}/$MONGODB_USERNAME/g" department-service.yaml
-          sed -i "s/\${MONGODB_PASSWORD}/$MONGODB_PASSWORD/g" employee-service.yaml
+          sed -i "s/\${MONGODB_USERNAME}/$MONGODB_USERNAME/g" config-server/src/main/resources/config/department-service.yaml
+          sed -i "s/\${MONGODB_PASSWORD}/$MONGODB_PASSWORD/g" config-server/src/main/resources/config/employee-service.yaml
   
   build-deploy:
     name: Build and Deploy Spring Microservices Application
