@@ -10,7 +10,6 @@ jobs:
   ci-cd-pipeline:
     name: Build and Deploy Spring Microservices Application
     runs-on: ubuntu-latest
-    environment: production
     strategy:
       matrix:
         service:
@@ -32,8 +31,8 @@ jobs:
 
       - name: Set up Environment Variables
         env:
-          MONGODB_USERNAME: ${{ vars.MONGODB_USERNAME }}
-          MONGODB_PASSWORD: ${{ vars.MONGODB_PASSWORD }}
+          MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
+          MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
         working-directory: ./config-server
         run: bash setup_env.sh
 

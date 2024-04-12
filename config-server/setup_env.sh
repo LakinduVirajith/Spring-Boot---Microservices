@@ -7,3 +7,7 @@ sed -i "s|\${MONGODB_PASSWORD}|$MONGODB_PASSWORD|g" src/main/resources/config/de
 # Replace placeholders in Employee service yaml
 sed -i "s|\${MONGODB_USERNAME}|$MONGODB_USERNAME|g" src/main/resources/config/employee-service.yaml
 sed -i "s|\${MONGODB_PASSWORD}|$MONGODB_PASSWORD|g" src/main/resources/config/employee-service.yaml
+
+# Display the values of MONGODB_USERNAME and MONGODB_PASSWORD
+echo "MONGODB_USERNAME: $MONGODB_USERNAME"
+echo "MONGODB_PASSWORD: $MONGODB_PASSWORD"
