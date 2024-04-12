@@ -1,7 +1,7 @@
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://service-registry:8761/eureka/
+      defaultZone: http://ctse-assignment/service-registry:8761/eureka/
 
 management:
   tracing:
@@ -19,7 +19,7 @@ spring:
       on-profile: dev
   data:
     mongodb:
-      uri: mongodb+srv://lakindu:ctse@cluster.lpmrzwx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster
+      uri: mongodb+srv://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@cluster.lpmrzwx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster
       database: CTSE-Dev
 
 ---
@@ -33,5 +33,5 @@ spring:
       on-profile: prod
   data:
     mongodb:
-      uri: mongodb+srv://lakindu:ctse@cluster.lpmrzwx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster
+      uri: mongodb+srv://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@cluster.lpmrzwx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster
       database: CTSE-Prod

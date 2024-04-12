@@ -4,4 +4,4 @@ spring:
   profiles:
     active: prod
   config:
-    import: "optional:configserver:http://config-server:8070"
+    import: "optional:configserver:http://ctse-assignment/config-server:8070"
