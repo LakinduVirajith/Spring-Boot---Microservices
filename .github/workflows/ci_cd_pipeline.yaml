@@ -10,14 +10,13 @@ jobs:
     name: Setup Environment
     runs-on: ubuntu-latest
     env:
-      MONGODB_USERNAME: ${{ vars.MONGODB_USERNAME }}
+      MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
       MONGODB_PASSWORD: ${{ vars.MONGODB_PASSWORD }}
     steps:
       - name: Debug Directory Structure
         run: |
-          echo "${env.MONGODB_USERNAME}"
-          pwd
-          ls -lR
+          echo "MONGODB_USERNAME: $MONGODB_USERNAME"
+          echo "MONGODB_PASSWORD: $MONGODB_PASSWORD"
           
       - name: Replace Environment Variables in Configuration File
         run: |
