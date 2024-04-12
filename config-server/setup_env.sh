@@ -7,7 +7,3 @@ sed -i "s/\${MONGODB_PASSWORD}/$MONGODB_PASSWORD/g" src/main/resources/config/de
 # Replace placeholders in Employee service yaml
 sed -i "s/\${MONGODB_USERNAME}/$MONGODB_USERNAME/g" src/main/resources/config/employee-service.yaml
 sed -i "s/\${MONGODB_PASSWORD}/$MONGODB_PASSWORD/g" src/main/resources/config/employee-service.yaml
-
-# Display the contents of Department service yaml
-echo "Department service yaml: $MONGODB_USERNAME"
-cat src/main/resources/config/department-service.yaml
