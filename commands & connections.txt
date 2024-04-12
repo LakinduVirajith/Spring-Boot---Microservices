@@ -17,3 +17,25 @@ password: ctse
 
 username: vimukthi
 password: ctse
+
+-----	docker commands	-----
+
+docker push lakinduvirajith/ctse-service-registry
+docker push lakinduvirajith/ctse-config-server
+docker push lakinduvirajith/ctse-api-gateway
+docker push lakinduvirajith/ctse-department-service
+docker push lakinduvirajith/ctse-employee-service
+
+docker network create ctse-docker-network
+
+docker network connect ctse-docker-network zipkin
+
+docker run -d -p 8761:8761 --name service-registry --net ctse-docker-network lakinduvirajith/ctse-service-registry
+docker run -d -p 8070:8070 --name config-server --net ctse-docker-network lakinduvirajith/ctse-config-server
+docker run -d -p 8080:8080 --name api-gateway --net ctse-docker-network lakinduvirajith/ctse-api-gateway
+docker run -d -p 8081:8081 --name department-service --net ctse-docker-network lakinduvirajith/ctse-department-service
+docker run -d -p 8082:8082 --name employee-service --net ctse-docker-network lakinduvirajith/ctse-employee-service
+
+----- using docker compose -----
+
+docker-compose -p ctse-assignment up -d
