@@ -15,7 +15,8 @@ jobs:
         env:
           MONGODB_USERNAME: ${{ vars.MONGODB_USERNAME }}
           MONGODB_PASSWORD: ${{ vars.MONGODB_PASSWORD }}
-        run: bash config-server/setup_env.sh
+        working-directory: ./config-server
+        run: bash setup_env.sh
   
   build-deploy:
     name: Build and Deploy Spring Microservices Application
