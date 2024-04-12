@@ -28,6 +28,8 @@ docker push lakinduvirajith/ctse-employee-service
 
 docker network create ctse-docker-network
 
+docker network connect ctse-docker-network zipkin
+
 docker run -d -p 8761:8761 --name service-registry --net ctse-docker-network lakinduvirajith/ctse-service-registry
 docker run -d -p 8070:8070 --name config-server --net ctse-docker-network lakinduvirajith/ctse-config-server
 docker run -d -p 8080:8080 --name api-gateway --net ctse-docker-network lakinduvirajith/ctse-api-gateway
