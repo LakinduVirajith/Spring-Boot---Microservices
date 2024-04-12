@@ -1,5 +1,5 @@
 server:
-  port: 8060
+  port: 8080
 
 spring:
   cloud:
@@ -18,7 +18,7 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8070/eureka/
+      defaultZone: http://localhost:8761/eureka/
 
 management:
   tracing:

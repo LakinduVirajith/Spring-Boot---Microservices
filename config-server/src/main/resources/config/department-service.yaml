@@ -1,10 +1,7 @@
-server:
-  port: 8081
-
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8070/eureka/
+      defaultZone: http://localhost:8761/eureka/
 
 management:
   tracing:
@@ -13,16 +10,22 @@ management:
 
 ---
 
+server:
+  port: 8081
+
 spring:
   config:
     activate:
       on-profile: dev
   data:
     mongodb:
-      uri: mongodb+srv://<username>:<password>@cluster.lpmrzwx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster
+      uri: mongodb+srv://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@cluster.lpmrzwx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster
       database: CTSE-Dev
 
 ---
+
+server:
+  port: 8081
 
 spring:
   config:
@@ -30,5 +33,5 @@ spring:
       on-profile: prod
   data:
     mongodb:
-      uri: mongodb+srv://<username>:<password>@cluster.lpmrzwx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster
+      uri: mongodb+srv://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@cluster.lpmrzwx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster
       database: CTSE-Prod
