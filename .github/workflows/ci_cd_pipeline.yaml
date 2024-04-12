@@ -11,6 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        
       - name: Set up Environment Variables
         env:
           MONGODB_USERNAME: ${{ vars.MONGODB_USERNAME }}
