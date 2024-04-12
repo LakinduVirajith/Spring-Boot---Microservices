@@ -36,8 +36,7 @@ jobs:
         env:
           MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
           MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
-        working-directory: ./config-server
-        run: bash setup_env.sh
+        run: bash ./config-server/setup_env.sh
 
       - name: Run Unit Tests for ${{ matrix.service }}
         run: mvn -B test --file ${{ matrix.service }}/pom.xml
