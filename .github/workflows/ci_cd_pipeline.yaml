@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Debug Directory Structure
         run: |
-          echo ${MONGODB_USERNAME}
+          echo "${MONGODB_USERNAME}"
           pwd
           ls -lR
           
