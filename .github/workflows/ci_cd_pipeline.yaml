@@ -10,8 +10,8 @@ jobs:
     name: Setup Environment
     runs-on: ubuntu-latest
     env:
-      MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
-      MONGODB_PASSWORD: ${{ vars.MONGODB_PASSWORD }}
+      MONGODB_USERNAME: ${{ secrets.production.MONGODB_USERNAME }}
+      MONGODB_PASSWORD: ${{ vars.production.MONGODB_PASSWORD }}
     steps:
       - name: Debug Directory Structure
         run: |
