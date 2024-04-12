@@ -5,9 +5,12 @@ on:
     branches:
       - main
       - test/ci-cd
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  ci-cd-pipeline:
+  cd-pipeline:
     name: Build and Deploy Spring Microservices Application
     runs-on: ubuntu-latest
     strategy:
