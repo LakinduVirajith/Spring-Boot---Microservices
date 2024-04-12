@@ -19,7 +19,7 @@ jobs:
           ls -lR
 
       - name: Navigate to Config Directory
-        run: cd Spring-Boot---Microservices/config-server/src/main/resources/config/
+        run: cd config-server/src/main/resources/config/
 
       - name: Replace Environment Variables in Configuration File
         run: |
