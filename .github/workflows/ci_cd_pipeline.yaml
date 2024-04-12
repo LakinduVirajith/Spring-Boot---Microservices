@@ -10,10 +10,11 @@ jobs:
     name: Setup Environment
     runs-on: ubuntu-latest
     steps:
-      - name: Establish Environment Variables
-        run: |
-          echo "MONGODB_USERNAME=${{ secrets.MONGODB_USERNAME }}" > ${{ github.workspace }}/production
-          echo "MONGODB_PASSWORD=${{ secrets.MONGODB_PASSWORD }}" >> ${{ github.workspace }}/production
+      - name: Set up Environment Variables
+        env:
+          MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
+          MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
+        run: echo "Environment variables set up successfully."
   
   build-deploy:
     name: Build and Deploy Spring Microservices Application
