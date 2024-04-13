@@ -2,7 +2,7 @@ name: Test and Build Spring Microservices Application for CTSE Assignment
 
 on: 
   pull_request:
-    branches: [ development, test/ci-cd ]
+    branches: [ main, development ]
 
 jobs:
     ci-pipeline:
