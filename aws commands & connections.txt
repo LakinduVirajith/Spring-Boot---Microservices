@@ -1,0 +1,27 @@
+---- connect to aws ec2	-----
+
+ssh -i <pem-file-name> ec2-user@<ec2-public-ip-address>
+ssh -i microservice-CTSE-assignment-keypair.pem ec2-user@65.2.143.176
+
+----	update server	-----
+
+sudo yum update -y
+
+----	initiate docker	-----
+
+sudo yum install -y docker
+sudo service docker start
+
+----	docker initiate container and network	-----
+
+sudo docker run -d -p 9411:9411 --name zipkin openzipkin/zipkin-slim
+sudo docker network create ctse-docker-network
+sudo docker network connect ctse-docker-network zipkin
+
+----- create docker images and run containers	-----
+
+sudo docker run -d -p 8761:8761 --name service-registry --net ctse-docker-network lakinduvirajith/ctse-service-registry
+sudo docker run -d -p 8070:8070 --name config-server --net ctse-docker-network lakinduvirajith/ctse-config-server
+sudo docker run -d -p 8080:8080 --name api-gateway --net ctse-docker-network lakinduvirajith/ctse-api-gateway
+sudo docker run -d -p 8081:8081 --name department-service --net ctse-docker-network lakinduvirajith/ctse-department-service
+sudo docker run -d -p 8082:8082 --name employee-service --net ctse-docker-network lakinduvirajith/ctse-employee-service
