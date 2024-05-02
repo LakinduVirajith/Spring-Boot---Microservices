@@ -1,6 +1,6 @@
 -----	zipkin	-----
 
-docker run -d -p 9411:9411 --name zipkin-container openzipkin/zipkin-slim
+docker run -d -p 9411:9411 --name zipkin openzipkin/zipkin-slim
 
 ----	mongodb compass connection	-----
 
@@ -20,11 +20,11 @@ password: ctse
 
 -----	docker commands	-----
 
-docker push lakinduvirajith/ctse-service-registry
-docker push lakinduvirajith/ctse-config-server
-docker push lakinduvirajith/ctse-api-gateway
-docker push lakinduvirajith/ctse-department-service
-docker push lakinduvirajith/ctse-employee-service
+docker pull lakinduvirajith/ctse-service-registry
+docker pull lakinduvirajith/ctse-config-server
+docker pull lakinduvirajith/ctse-api-gateway
+docker pull lakinduvirajith/ctse-department-service
+docker pull lakinduvirajith/ctse-employee-service
 
 docker network create ctse-docker-network
 
